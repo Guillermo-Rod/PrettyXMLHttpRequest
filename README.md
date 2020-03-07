@@ -1,132 +1,135 @@
 # PrettyXMLHttpRequest
-  
-Make XMLHttpRequest on a easy way !
 
-## About PrettyXMLHttpRequest
-
-Pretty XMLHttpRequest is a minified library of javascript that allows to send Post and Get request to any server with a easy way, using pure javascript with a elegant syntax.   
-## Using
-
-You only need call three functions.
-You can use the api var default if you need just request:
-
-__- api .__
-
-if you will send more than one request create your custom var:
-
-__- var my_cuztom_api .__
+_Make XMLHttpRequest on a easy way !_
 
 
+## About 🚀
 
-## First -- Arguments
+_Pretty XMLHttpRequest is a minified library of javascript that allows to send Post and Get request to any server with a easy way, using pure javascript with a elegant syntax._
 
-You must define three params on a object: 
-
-__- var args = {method: (string), url: (string), HTML_form_id: (string or null)};__
-
-- Method:
-
-must be "POST" or "GET".
-
-- Url:
-
-must be "https://your-url".
-
-- HTML_form_id:
-
-Must be "your_form_id" (__NOT document.getElementById('your_form_id')!__) or null if you don't need send data.
-
-- Pretty create()
-
-You must pass this args to the create function:
-
-__- api = pretty.create(args);__
+You only need call **two functions**
 
 
+### Download 🔧
 
-## Second -- Before send
+_Just download the file.min.js and add it on your html_
 
-This function is optional, if you need do or validate something before send the request.
+...
 
-- Before send:
+<script src="./prettyXMLHttpRequest.min.js"></script>
+...
 
-__- api.beforeSend(function(){
-<br>
-});__
+### Using ⚙️
 
+_You only need call three functions._
+_You can use the api var default if you need just one request._
 
+...
 
-## Third -- Send
+api 
+...
 
-This function sends the request and receives two arguments from the response
+_if you will send more than one request create your custom var:_
 
-- Send:
+...
 
-__- api.send(function(status , request){        
-<br>
-});__
+var my_custom_var_api
+...
 
-- Status: 
+_You must define three params on a object:_ 
 
-This status contains a boolean value it means if the request was done successfully or occurred some error during the sending.
+* method - must be "POST" or "GET".
+* url - must be "https://your-url".
+* HTML_form_id - Must be "your_form_id" (NOT document.getElementById('your_form_id')!) or null if you don't need send data.
 
-- Response
+...
 
-This "response" contains the json that your server responded.
+var args = {method: (string), url: (string), HTML_form_id: (string or null) };
+...
 
+_You must pass these args to the create function with the pretty var:_
+...
 
-
-## Additional functions
-
-- Push input
-
-<b>IMPORTAN! you must define as null the HTML_form_id argument </b>
-
-This function helps you to push the input by input for construct the data will send on your server.
-You can define the javascript element: document.getElementById('your_input_id').
-
-< input type="text" id="token_id" name="token_" value="23Sdsd344"> 
-
-
-const element = document.getElementById('token_');
+api = pretty.create(args)
+...
 
 
-## Completely usage
+_Before send, this function is optional, if you need do or validate something before send the request:_
 
-
-__- api = pretty.create(args);
-<br>
+...
 api.beforeSend(function(){
-<br>
+	
 });
-<br>
+...
+
+_This function sends the request and receives two arguments in response from the server:_
+
+* status - this status contains a boolean value it means if the request was done successfully or occurred some error during the sending.
+* response - this contains the json that your server responded.
+
+...
 api.send(function(status , request){        
-<br>
-});__ 
-  
 
-## Contributions
-
-if you want report any bug or contribute to this javascript library contact us: 
-- **[Guillermo-Rod@dev.mx](https://gmail.com/)**
-
-## MMO&Friends
-
-See other packages we offer and could be useful:
-
-- Upload Massive Files: 
-
-Storage and save on the db at the same time (Laravel package).
-- Calculate age: 
-
-Calculate age with date of birth (javascript library).
-
-- Estados de mexico y sus municipios:
-
-Pone en un < select> todos los estados y al cambiar de estado devuelve sus municipios, en otro select, es configurable y facil de usar (javascript library)
+});
+...
 
 
 
-## License
+## Completely usage 🔩
+
+...
+
+<!DOCTYPE html>
+<html lang="es">
+<head></head>
+<body>
+<script>
+var args = {method: (string), url: (string), HTML_form_id: (string or null) };
+api = pretty.create(args);
+api.beforeSend(function(){
+
+});	
+api.send(function(status , request){        
+
+});
+</script>
+</body>
+</html> 
+...  
+
+
+## Contributions 🖇️
+
+_if you want report any bug or contribute to this javascript library contact us:_
+* [Guillermo-Rod@dev.mx](https://gmail.com/)- Developer*
+
+
+
+## MMO&Friends 🎁
+
+_See other packages we offer and could be useful:_
+
+* Upload Massive Files - Storage and save on the db at the same time (Laravel package).
+
+
+## License 📄
 
 The PrettyXMLHttpRequest is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+---
+[Guillermo-Rod](https://github.com/Guillermo-Rod) ❤️💀
+
+
+
+
+
+
+
+
+
+
+
+
+
