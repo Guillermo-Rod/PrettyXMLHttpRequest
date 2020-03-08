@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prettyXMLHttpRequest</title>
+</head>
+<body>
+
+<h1>Creation form</h1>
+<form id="creation_form_id">
+	<label>User name</label>
+	<input type="text" name="user_name" value="Guillermo Rodriguez">		
+	<input type="text" name="mail" value="Guillermo-Rod@dev.mx">		
+	<input type="button" value="Subir documentos" onclick="send('POST','./create-user','creation_form_id')">
+</form>
+
+<h1>Aditional inputs</h1>
+<input type="text" name="aditional_1" value="additonal value">		
+<input type="text" name="aditional_2" value="additional_value_">		
+
+
+<h1>Searching form</h1>
+<form>
+	<label>User name</label>
+	<input type="text" name="search" value="Guillermo Rodriguez" id="input_search_user">			
+	<input type="button" value="Subir documentos" onclick="send3('GET','./search-user')">
+</form>
+
+<button onclick="send3('GET','./fetch-users')">Fetch users</button>
+
+<!-- Laravel token @csrf --> 	
+
+
+<script src="./prettyXMLHttpRequest-3.0.0.min.js"></script>
+<script>
+	var array_names    = ['user_name', 'user_id'];			
+	var array_values   = ['Guillermo', 1];
+	var array_elements = [document.getElementById('aditional_1'),document.getElementById('aditional_2')];
+
+	// FIRST WAY POST
+	function send(arg_method, arg_url, arg_form_id){
+
+		var args = {method: arg_method, url: arg_url, HTML_form_id: arg_form_id };
+		api = pretty.create(args);
+		api.beforeSend(function(){
+			alert('Sending data...');
+		});	
+		api.send(function(status , request){        		
+			console.log(request);
+		});
+	}
+
+	// SECOND WAY POST
+	function send2(){
+
+		let args = {method: "POST", url: "./my-url", HTML_form_id: null};
+		//or
+		let args = {method: "POST", url: "./my-url", HTML_form_id: 'my_form_id'};
+
+		api = pretty.create(args);
+		api.pushInput("user_id",1);		
+		api.pushInput(1,0);		
+		api.pushInput(array_names,array_values);			
+		api.pushInput(array_elements);	
+		api.pushInput(document.getElementsByName('_token')[0]); //laravel token ?	
+		api.beforeSend(function(){
+			//example: ./search-user?search=Guillermo%Rodriguez etc..
+
+			alert('Sending data...');
+		});	
+		api.send(function(status , request){        		
+			console.log(request);
+		});
+	}
+
+	//FIRST WAY GET 
+	function send2(arg_method, arg_url){		
+
+		let args = {method: arg_method, url: arg_url, HTML_form_id: null };
+		
+		let my_api = pretty.create(args);				
+		my_api.beforeSend(function(){
+			//example: ./search-user?search=Guillermo%Rodriguez etc..
+			alert('Sending data...');
+		});	
+		my_api.send(function(status , request){        		
+			console.log(request); 
+		});
+	}
+
+	// FIRST WAY GET
+	function send3(arg_method, arg_url){		
+		//example: ./search-user?search=Guillermo%Rodriguez etc..
+
+		let args = {method: arg_method, url: arg_url, HTML_form_id: null };
+		
+		let my_api = pretty.create(args);
+		my_api.pushUrlParam("mail","mail@mail.com");		
+		my_api.pushUrlParam(1,2020);		
+		my_api.pushUrlParam(array_names,array_values);		
+		my_api.pushUrlParam(document.getElementById('input_search_user'));				
+		my_api.pushUrlParam(array_elements);			
+		my_api.beforeSend(function(){
+			alert('Sending data...');
+		});	
+		my_api.send(function(status , request){        		
+			console.log(request); 
+		});
+	}
+</script>
+</body>
+</html>

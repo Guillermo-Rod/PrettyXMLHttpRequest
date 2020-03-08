@@ -89,7 +89,7 @@ api.send(function(status , request){
 
 
 <script src="./prettyXMLHttpRequest.min.js"></script>
-</script>
+<script>
 
 	function send(arg_method, arg_url, arg_form_id){
 
@@ -140,7 +140,7 @@ _if you need send a `GET` method request for search, you can use `null` and `.pu
 </form>
 
 <script src="./prettyXMLHttpRequest.min.js"></script>
-</script>
+<script>
 	var array_names    = ['user_name', 'user_id'];			
 	var array_values   = ['Guillermo', 1];
 	var array_elements = [document.getElementById('_'),document.getElementById('_')];	
