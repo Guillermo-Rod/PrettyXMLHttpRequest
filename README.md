@@ -9,6 +9,8 @@ _Pretty XMLHttpRequest is a minified library of javascript that allows to send P
 
 You only need call **two functions**
 
+_**Stable version v3.0.0**_ 
+
 
 ### Download 🔧
 
@@ -21,7 +23,6 @@ _Just download the file.min.js and add it on your html_
 
 ### Using ⚙️
 
-_You only need call three functions._
 _You can use the `api` var default if you need just one request._
 
 ```
@@ -39,7 +40,7 @@ _You must define three params on a `object`:_
 
 * method - must be "POST" or "GET".
 * url - must be "https://your-url".
-* HTML_form_id - Must be "your_form_id" (NOT document.getElementById('your_form_id')!) or if you don't need send data put null.
+* HTML_form_id - Must be "your_form_id" (*NOT document.getElementById('your_form_id')!*) or if you don't need send data put null.
 
 ```
 var args = {method: (string), url: (string), HTML_form_id: (string or null) };
@@ -70,7 +71,6 @@ api.send(function(status , request){
 
 });
 ```
-
 
 
 ## Completely usage 🔩
@@ -108,7 +108,9 @@ api.send(function(status , request){
 
 ## Additional functions 🔧
 
-_if you need send a `POST` method request without a `form` you can use `null` and `.pushInput()` or if you just need add additional inputs, you can use the `.pushInput()` function too:_
+_if you need send a `POST` method request without a `form` you can use `null` and `.pushInput()` function, for make a one per one the `inputs` that you need._ 
+
+_Or if you just need add additional inputs in yout `form` , you can use the `.pushInput()` function too! :_
 
 ```
 
@@ -128,7 +130,7 @@ api.pushInput(array_elements);
 api.pushInput(document.getElementsByName('_token')[0]); //laravel token ?		
 ```
 
-_if you need send a `GET` method request for search, you can use `null` and `.pushUrlParam()`:_
+_if you need send a `GET` method request for search, you can use `null` and `.pushUrlParam()` function:_
 
 ```
 <h1>Searching form</h1>
@@ -171,15 +173,12 @@ _if you need send a `GET` method request for search, you can use `null` and `.pu
 ## Contributions 🖇️
 
 _if you want report any bug or contribute to this javascript library contact us:_
-* [Guillermo-Rod@dev.mx](https://gmail.com/)- Developer*
-
+* [guillermo.rodriguez.dev@gmail.com](https://gmail.com/)- Developer*
 
 
 ## MMO&Friends 🎁
 
 _See other packages we offer and could be useful:_
-
-* Upload Massive Files - Storage and save files on the db at the same time (Laravel package).
 
 
 ## License 📄
