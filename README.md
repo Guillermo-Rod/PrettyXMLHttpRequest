@@ -9,7 +9,7 @@ _Pretty XMLHttpRequest is a minified library of javascript that allows to send P
 
 You only need call **two functions**
 
-_**Stable version v3.0.0**_ 
+_**Stable version v1.0.0**_ 
 
 
 ### Download 🔧
