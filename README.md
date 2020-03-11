@@ -183,7 +183,7 @@ _See other packages we offer and could be useful:_
 
 ## License 📄
 
-The PrettyXMLHttpRequest is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The PrettyXMLHttpRequest is open-source software licensed under the [GPL-3.0 Licence](https://opensource.org/licenses/GPL-3.0).
 
 
 
